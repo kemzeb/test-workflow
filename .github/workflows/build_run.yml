@@ -28,7 +28,7 @@ jobs:
       - name: Build and Run
         run: |
           pip install -e .
-          python -m ${{ env.PY_MODULE_ENTRY_SCRIPT }}
+          ${{ env.PY_MODULE_ENTRY_SCRIPT }}
 
   job2:
     name: "Build on MacOS and Ubuntu"
@@ -51,5 +51,5 @@ jobs:
 
       - name: Build and Run
         run: |
-          pip install -e
-          python -m ${{ env.PY_MODULE_ENTRY_SCRIPT }}
+          pip install -e .
+          ${{ env.PY_MODULE_ENTRY_SCRIPT }}
