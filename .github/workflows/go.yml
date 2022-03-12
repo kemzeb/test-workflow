@@ -18,6 +18,12 @@ jobs:
         with:
           go-version: 1.17
 
-      - name: echo $GOPATH
+      - name: Set $GOPATH
         run: |
-          go env GOPATH
+          echo My path: $GOPATH
+          export GOPATH=$(go env GOPATH)
+          echo My new path?: $GOPATH
+
+      - name: $GOPATH. $GOPATH? Again?
+        run: |
+          echo My path: $GOPATH
