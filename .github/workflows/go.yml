@@ -7,7 +7,7 @@ on:
     branches: [main]
 
 env:
-  GOPATH: "${{ github.workspace }}/go"
+  GOPATH: "../${{ github.workspace }}/go"
 
 jobs:
   build_run_test:
@@ -21,7 +21,6 @@ jobs:
         with:
           go-version: 1.17
 
-      - name: Setup $GOPATH
+      - name: $GOPATH
         run: |
-          export GOPATH="${{ github.workspace }}/go"
           echo "$GOPATH"
