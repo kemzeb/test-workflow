@@ -7,12 +7,16 @@ on:
     branches: [main]
 
 env:
-  GOPATH: "../${{ github.workspace }}/go"
+  GOPATH: "${{ github.workspace }}/go"
 
 jobs:
   build_run_test:
     runs-on: ubuntu-latest
     steps:
+      - name: echo $GOPATH 1
+        run: |
+          echo $GOPATH
+
       - name: Checkout repo
         uses: actions/checkout@v2
 
@@ -21,6 +25,6 @@ jobs:
         with:
           go-version: 1.17
 
-      - name: $GOPATH
+      - name: echo $GOPATH 2
         run: |
-          echo "$GOPATH"
+          go env GOPATH
