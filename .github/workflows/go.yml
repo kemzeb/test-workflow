@@ -8,6 +8,9 @@ on:
 
 jobs:
   build_run_test:
+    env:
+      GOPATH: ""
+
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repo
@@ -20,7 +23,7 @@ jobs:
 
       - name: Set $GOPATH
         run: |
-          echo My path: $GOPATH
+          echo $GOPATH
           export GOPATH=$(go env GOPATH)
           echo My new path?: $GOPATH
 
